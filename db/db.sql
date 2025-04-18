@@ -31,7 +31,6 @@ CREATE TABLE Orders (
                         ProductID INT,
                         OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
                         Quantity INT NOT NULL,
-                        TotalAmount DECIMAL(10, 2) NOT NULL,
                         FOREIGN KEY (UserID) REFERENCES Users(UserID),
                         FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
