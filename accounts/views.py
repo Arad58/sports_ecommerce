@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegisterForm
+from django.contrib import messages
 
 def login_view(request):
     if request.method == 'POST':
@@ -14,23 +15,25 @@ def login_view(request):
                 login(request, user)
                 return redirect('profile')
             else:
+                messages.error(request, 'Invalid username or password.')
                 return redirect('login')
     else:
         form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'accounts/login.html', {'form': form})
 
 def register_view(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            login(request, user)
+            return redirect('profile')
     else:
         form = RegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'accounts/register.html', {'form': form})
 
 def profile_view(request):
-    return render(request, 'profile.html', {'user': request.user})
+    return render(request, 'accounts/profile.html', {'user': request.user})
 
 def logout_view(request):
     logout(request)
