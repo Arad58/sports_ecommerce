@@ -50,7 +50,7 @@ WSGI_APPLICATION = 'sports_ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'appdb',
+        'NAME': 'bravoappdb',
         'USER': 'root',
         'PASSWORD': 'Community2024!',
         'HOST': 'localhost',

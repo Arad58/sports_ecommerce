@@ -4,6 +4,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegisterForm
 from django.contrib import messages
 
+def home(request):
+    return render(request, 'home.html')
+
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
