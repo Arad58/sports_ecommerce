@@ -25,7 +25,7 @@ CREATE TABLE Products (
                           Name VARCHAR(100) NOT NULL,
                           Description TEXT,
                           Price DECIMAL(10, 2) NOT NULL,
-                          StockQuantity INT NOT NULL,
+                          Stock INT NOT NULL,
                           CategoryID INT,
                           ImageURL TEXT NOT NULL,
                           FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
