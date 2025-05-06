@@ -11,16 +11,15 @@
     <h1>Login</h1>
     <form id="login-form" method="POST">
         {% csrf_token %}
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-        <div id="email-error" class="error-message"></div>
 
-        <label for="password">Password</label>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password" placeholder="Enter your password" required>
-        <div id="password-error" class="error-message"></div>
 
         <button type="submit">Login</button>
-        <a href="signup.html" class="signup-button">Sign Up</a>
+        <a href="{% url 'signup' %}" class="signup-link">Sign Up</a>
     </form>
 </div>
 <script src="{% static 'accounts/login.js' %}"></script>
