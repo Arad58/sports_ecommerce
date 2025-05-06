@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'accounts/profile.css' %}">
+</head>
+<body>
+<div class="profile-container">
+    <h2>User Profile</h2>
+
+    <div class="profile-info">
+
+        <div class="input-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" value="" placeholder="Enter your new username">
+        </div>
+
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="" placeholder="Enter your new email">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" value="" placeholder="Enter your new password">
+        </div>
+    </div>
+
+    <div class="profile-buttons">
+        <button id="save-btn">Save</button>
+    </div>
+</div>
+
+<script src="{% static 'accounts/profile.js' %}"></script>
+</body>
+</html>

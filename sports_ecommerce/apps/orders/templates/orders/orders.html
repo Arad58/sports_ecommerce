@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="{% static 'orders/orders.css' %}">
+</head>
+<body>
+<div class="orders-container">
+    <h2>Orders</h2>
+    {% if orders %}
+        {% for order in orders %}
+            <div class="order-item">
+                <p>Order #{{ order.id }}</p>
+                <p>Total: ${{ order.total_price }}</p>
+                <p class="order-status {{ order.status|lower }}">{{ order.status }}</p>
+                <a href="{% url 'order_detail' order.id %}" class="track-order-btn">View Details</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You have no orders.</p>
+    {% endif %}
+</div>
+</body>
+</html>
