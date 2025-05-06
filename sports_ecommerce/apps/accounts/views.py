@@ -7,20 +7,19 @@ def login_view(request):
         email = request.POST.get("email")
         password = request.POST.get("password")
 
-        user = User.objects.filter(email=email).first()
+        user = authenticate(request, username=email, password=password)
 
-        if user:
-            user = authenticate(request, username=user.username, password=password)
-            if user:
-                login(request, user)
-                return redirect("profile")
+        if user is not None:
+            login(request, user)
+            return redirect("products/home")
 
     return render(request, "accounts/login.html")
 
 def logout_view(request):
-    if request.method == "POST":
-        logout(request)
-        return redirect("login")
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            logout(request)
+            return redirect("login")
 
     return render(request, "accounts/logout.html")
 

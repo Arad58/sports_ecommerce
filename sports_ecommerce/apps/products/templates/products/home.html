@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'products/home.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="home">
+        <h1>Welcome to the Store!</h1>
+        <p>Explore our awesome products.</p>
+    </section>
+
+    <div class="product-card">
+        <img src="{{ MEDIA_URL }} ../../products/football.jpg" alt="Basketball">
+        <h3>Basketball</h3>
+        <p>Price: €10.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="{{ MEDIA_URL }}products/football.jpg" alt="Football">
+        <h3>Football</h3>
+        <p>Price: €20.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="{{ MEDIA_URL }}products/racket.jpg" alt="Racket">
+        <h3>Racket</h3>
+        <p>Price: €30.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+</main>
+<footer>
+    <p>Sports Active</p>
+</footer>
+</body>
+</html>
