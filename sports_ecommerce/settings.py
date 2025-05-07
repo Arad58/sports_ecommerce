@@ -16,7 +16,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sports_ecommerce.apps.accounts',
-    'sports_ecommerce.apps.orders',
     'sports_ecommerce.apps.products',
 ]
 
@@ -58,7 +57,6 @@ DATABASES = {
     }
 }
 
-
 WSGI_APPLICATION = 'sports_ecommerce.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -83,10 +81,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_URL = 'static/'
 

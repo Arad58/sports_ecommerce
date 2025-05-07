@@ -5,7 +5,7 @@ Feature: Manage Orders
 
   Scenario: Order Processor creates a new order
     Given the order processor is logged in
-    When the order processor navigates to the "Create Order" page
+    When the order processor navigates to the "Create Order" option
     And enters valid order details
     And submits the form
     Then the new order should be created
@@ -19,7 +19,7 @@ Feature: Manage Orders
   Scenario: Order Processor updates an existing order
     Given the order processor is logged in
     And an order exists in the system
-    When the order processor navigates to the "Update Order" page
+    When the order processor navigates to the "Update Order" option
     And modifies order information
     And submits the changes
     Then the system should update the order

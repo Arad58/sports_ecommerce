@@ -5,7 +5,7 @@ Feature: Manage Products
 
   Scenario: Product Manager creates a new product
     Given the product manager is logged in
-    When the product manager navigates to the "Create Product" page
+    When the product manager navigates to the "Create Product" option
     And enters valid product details
     And submits the form
     Then the new product should be created
@@ -16,10 +16,10 @@ Feature: Manage Products
     When the product manager searches for a product
     Then the system should display the product's details
 
-  Scenario: Product Manager updates an existing product
+  Scenario: Product Manager updates the existing product
     Given the product manager is logged in
     And a product exists in the system
-    When the product manager navigates to the "Update Product" page
+    When the product manager navigates to the "Update Product" option
     And modifies product information
     And submits the changes
     Then the system should update the product

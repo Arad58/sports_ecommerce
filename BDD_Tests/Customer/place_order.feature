@@ -10,14 +10,14 @@ Feature: Place Orders
     Then the product should appear in the customer's cart
 
   Scenario: Customer proceeds to checkout
-    Given the customer has items in the cart3
+    Given the customer has items in the cart
     When the customer clicks "Proceed to Checkout"
     Then the system should navigate to the checkout page
 
   Scenario: Customer enters user details
     Given the customer is on the checkout page
     When the customer enters their user details
-    Then the system should store the customer details for the order
+    Then the system should store the customer details
 
   Scenario: Customer confirms order
     Given the customer has entered their details
@@ -27,4 +27,4 @@ Feature: Place Orders
   Scenario: Customer receives order confirmation
     Given the order has been placed
     When the system processes the order
-    Then the customer should receive an order confirmation message
+    Then the customer should receive an confirmation message

@@ -5,7 +5,7 @@ Feature: Manage Users
 
   Scenario: Admin creates an user
     Given the admin is logged in
-    When the admin navigates to the "Create User" page
+    When the admin navigates to the "Create User" option
     And enters valid user details
     And submits the form
     Then the new user should be created
@@ -19,7 +19,7 @@ Feature: Manage Users
   Scenario: Admin updates an user
     Given the admin is logged in
     And a user exists in the system
-    When the admin navigates to the "Update User" page
+    When the admin navigates to the "Update User" option
     And modifies user information
     And saves the changes
     Then the system should update the user
